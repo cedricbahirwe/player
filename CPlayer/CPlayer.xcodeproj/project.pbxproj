@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8207D3B4252473F4005C660E /* 08-Elle-aime-feat.-Laylow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3A7252473F3005C660E /* 08-Elle-aime-feat.-Laylow.mp3 */; };
+		8207D3B5252473F4005C660E /* 05-Top-Boy-feat.-Bosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3A8252473F3005C660E /* 05-Top-Boy-feat.-Bosh.mp3 */; };
+		8207D3B6252473F4005C660E /* 02-Solitude.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3A9252473F3005C660E /* 02-Solitude.mp3 */; };
+		8207D3B7252473F4005C660E /* 11-Combien-de-fois.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AA252473F3005C660E /* 11-Combien-de-fois.mp3 */; };
+		8207D3B8252473F4005C660E /* 06-230-feat.-PLK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AB252473F3005C660E /* 06-230-feat.-PLK.mp3 */; };
+		8207D3B9252473F4005C660E /* 04-Incassable-feat.-Leto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AC252473F3005C660E /* 04-Incassable-feat.-Leto.mp3 */; };
+		8207D3BA252473F4005C660E /* 07-Interlude.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AD252473F3005C660E /* 07-Interlude.mp3 */; };
+		8207D3BB252473F4005C660E /* 12-New-Level-feat.-Josman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AE252473F3005C660E /* 12-New-Level-feat.-Josman.mp3 */; };
+		8207D3BC252473F4005C660E /* 03-Smile-feat.-SCH.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3AF252473F3005C660E /* 03-Smile-feat.-SCH.mp3 */; };
+		8207D3BD252473F4005C660E /* 10-Hola.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B0252473F4005C660E /* 10-Hola.mp3 */; };
+		8207D3BE252473F4005C660E /* 13-Fortune.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B1252473F4005C660E /* 13-Fortune.mp3 */; };
+		8207D3BF252473F4005C660E /* 09-Reste-avec-moi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B2252473F4005C660E /* 09-Reste-avec-moi.mp3 */; };
+		8207D3C0252473F4005C660E /* 01-Anonymat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B3252473F4005C660E /* 01-Anonymat.mp3 */; };
+		8207D3C225248366005C660E /* songs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3C125248366005C660E /* songs.json */; };
+		826B758525262ED900FF7D89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B758425262ED900FF7D89 /* MainViewController.swift */; };
+		826B758725262F9300FF7D89 /* walking.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758625262F9300FF7D89 /* walking.svg */; };
+		826B758A2526303B00FF7D89 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826B75892526303B00FF7D89 /* WebKit.framework */; };
+		826B7595252632C400FF7D89 /* piano.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758B252632C300FF7D89 /* piano.svg */; };
+		826B7596252632C400FF7D89 /* happy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758C252632C400FF7D89 /* happy.svg */; };
+		826B7597252632C400FF7D89 /* player.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758D252632C400FF7D89 /* player.svg */; };
+		826B7598252632C400FF7D89 /* video.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758E252632C400FF7D89 /* video.svg */; };
+		826B7599252632C400FF7D89 /* media.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758F252632C400FF7D89 /* media.svg */; };
+		826B759A252632C400FF7D89 /* playlist.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B7590252632C400FF7D89 /* playlist.svg */; };
+		826B759B252632C400FF7D89 /* mello.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B7591252632C400FF7D89 /* mello.svg */; };
+		826B759C252632C400FF7D89 /* listen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B7592252632C400FF7D89 /* listen.svg */; };
+		826B759D252632C400FF7D89 /* musci.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B7593252632C400FF7D89 /* musci.svg */; };
+		826B759E252632C400FF7D89 /* table.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B7594252632C400FF7D89 /* table.svg */; };
+		826B75A02527003600FF7D89 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B759F2527003600FF7D89 /* ListView.swift */; };
+		82CC43DC2523882C00D456A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC43DB2523882C00D456A7 /* AppDelegate.swift */; };
+		82CC43DE2523882C00D456A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC43DD2523882C00D456A7 /* SceneDelegate.swift */; };
+		82CC43E02523882C00D456A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC43DF2523882C00D456A7 /* ViewController.swift */; };
+		82CC43E32523882C00D456A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82CC43E12523882C00D456A7 /* Main.storyboard */; };
+		82CC43E52523882D00D456A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CC43E42523882D00D456A7 /* Assets.xcassets */; };
+		82CC43E82523882D00D456A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82CC43E62523882D00D456A7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8207D3A7252473F3005C660E /* 08-Elle-aime-feat.-Laylow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "08-Elle-aime-feat.-Laylow.mp3"; sourceTree = "<group>"; };
+		8207D3A8252473F3005C660E /* 05-Top-Boy-feat.-Bosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "05-Top-Boy-feat.-Bosh.mp3"; sourceTree = "<group>"; };
+		8207D3A9252473F3005C660E /* 02-Solitude.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "02-Solitude.mp3"; sourceTree = "<group>"; };
+		8207D3AA252473F3005C660E /* 11-Combien-de-fois.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "11-Combien-de-fois.mp3"; sourceTree = "<group>"; };
+		8207D3AB252473F3005C660E /* 06-230-feat.-PLK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "06-230-feat.-PLK.mp3"; sourceTree = "<group>"; };
+		8207D3AC252473F3005C660E /* 04-Incassable-feat.-Leto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "04-Incassable-feat.-Leto.mp3"; sourceTree = "<group>"; };
+		8207D3AD252473F3005C660E /* 07-Interlude.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "07-Interlude.mp3"; sourceTree = "<group>"; };
+		8207D3AE252473F3005C660E /* 12-New-Level-feat.-Josman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "12-New-Level-feat.-Josman.mp3"; sourceTree = "<group>"; };
+		8207D3AF252473F3005C660E /* 03-Smile-feat.-SCH.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "03-Smile-feat.-SCH.mp3"; sourceTree = "<group>"; };
+		8207D3B0252473F4005C660E /* 10-Hola.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10-Hola.mp3"; sourceTree = "<group>"; };
+		8207D3B1252473F4005C660E /* 13-Fortune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "13-Fortune.mp3"; sourceTree = "<group>"; };
+		8207D3B2252473F4005C660E /* 09-Reste-avec-moi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "09-Reste-avec-moi.mp3"; sourceTree = "<group>"; };
+		8207D3B3252473F4005C660E /* 01-Anonymat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01-Anonymat.mp3"; sourceTree = "<group>"; };
+		8207D3C125248366005C660E /* songs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = songs.json; sourceTree = "<group>"; };
+		826B758425262ED900FF7D89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		826B758625262F9300FF7D89 /* walking.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walking.svg; sourceTree = "<group>"; };
+		826B75892526303B00FF7D89 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		826B758B252632C300FF7D89 /* piano.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = piano.svg; sourceTree = "<group>"; };
+		826B758C252632C400FF7D89 /* happy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happy.svg; sourceTree = "<group>"; };
+		826B758D252632C400FF7D89 /* player.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = player.svg; sourceTree = "<group>"; };
+		826B758E252632C400FF7D89 /* video.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = video.svg; sourceTree = "<group>"; };
+		826B758F252632C400FF7D89 /* media.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = media.svg; sourceTree = "<group>"; };
+		826B7590252632C400FF7D89 /* playlist.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = playlist.svg; sourceTree = "<group>"; };
+		826B7591252632C400FF7D89 /* mello.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mello.svg; sourceTree = "<group>"; };
+		826B7592252632C400FF7D89 /* listen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = listen.svg; sourceTree = "<group>"; };
+		826B7593252632C400FF7D89 /* musci.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = musci.svg; sourceTree = "<group>"; };
+		826B7594252632C400FF7D89 /* table.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.svg; sourceTree = "<group>"; };
+		826B759F2527003600FF7D89 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		82CC43D82523882C00D456A7 /* CPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82CC43DB2523882C00D456A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		82CC43DD2523882C00D456A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		82CC43DF2523882C00D456A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82CC43E22523882C00D456A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82CC43E42523882D00D456A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		82CC43E72523882D00D456A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82CC43E92523882D00D456A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82CC43D52523882C00D456A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				826B758A2526303B00FF7D89 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		826B75882526303B00FF7D89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				826B75892526303B00FF7D89 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		826B75A12527021300FF7D89 /* SVGs */ = {
+			isa = PBXGroup;
+			children = (
+				826B758625262F9300FF7D89 /* walking.svg */,
+				826B758C252632C400FF7D89 /* happy.svg */,
+				826B7592252632C400FF7D89 /* listen.svg */,
+				826B758F252632C400FF7D89 /* media.svg */,
+				826B7593252632C400FF7D89 /* musci.svg */,
+				826B758B252632C300FF7D89 /* piano.svg */,
+				826B758D252632C400FF7D89 /* player.svg */,
+				826B7590252632C400FF7D89 /* playlist.svg */,
+				826B7594252632C400FF7D89 /* table.svg */,
+				826B758E252632C400FF7D89 /* video.svg */,
+				826B7591252632C400FF7D89 /* mello.svg */,
+			);
+			path = SVGs;
+			sourceTree = "<group>";
+		};
+		826B75A22527022800FF7D89 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				8207D3B3252473F4005C660E /* 01-Anonymat.mp3 */,
+				8207D3A9252473F3005C660E /* 02-Solitude.mp3 */,
+				8207D3AF252473F3005C660E /* 03-Smile-feat.-SCH.mp3 */,
+				8207D3AC252473F3005C660E /* 04-Incassable-feat.-Leto.mp3 */,
+				8207D3A8252473F3005C660E /* 05-Top-Boy-feat.-Bosh.mp3 */,
+				8207D3AB252473F3005C660E /* 06-230-feat.-PLK.mp3 */,
+				8207D3AD252473F3005C660E /* 07-Interlude.mp3 */,
+				8207D3A7252473F3005C660E /* 08-Elle-aime-feat.-Laylow.mp3 */,
+				8207D3B2252473F4005C660E /* 09-Reste-avec-moi.mp3 */,
+				8207D3B0252473F4005C660E /* 10-Hola.mp3 */,
+				8207D3AA252473F3005C660E /* 11-Combien-de-fois.mp3 */,
+				8207D3AE252473F3005C660E /* 12-New-Level-feat.-Josman.mp3 */,
+				8207D3B1252473F4005C660E /* 13-Fortune.mp3 */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
+		82CC43CF2523882C00D456A7 = {
+			isa = PBXGroup;
+			children = (
+				82CC43DA2523882C00D456A7 /* CPlayer */,
+				82CC43D92523882C00D456A7 /* Products */,
+				826B75882526303B00FF7D89 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		82CC43D92523882C00D456A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82CC43D82523882C00D456A7 /* CPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82CC43DA2523882C00D456A7 /* CPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				82CC43DB2523882C00D456A7 /* AppDelegate.swift */,
+				82CC43DD2523882C00D456A7 /* SceneDelegate.swift */,
+				826B758425262ED900FF7D89 /* MainViewController.swift */,
+				826B759F2527003600FF7D89 /* ListView.swift */,
+				82CC43DF2523882C00D456A7 /* ViewController.swift */,
+				82CC43E12523882C00D456A7 /* Main.storyboard */,
+				826B75A22527022800FF7D89 /* Songs */,
+				826B75A12527021300FF7D89 /* SVGs */,
+				8207D3C125248366005C660E /* songs.json */,
+				82CC43E42523882D00D456A7 /* Assets.xcassets */,
+				82CC43E62523882D00D456A7 /* LaunchScreen.storyboard */,
+				82CC43E92523882D00D456A7 /* Info.plist */,
+			);
+			path = CPlayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82CC43D72523882C00D456A7 /* CPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82CC43EC2523882D00D456A7 /* Build configuration list for PBXNativeTarget "CPlayer" */;
+			buildPhases = (
+				82CC43D42523882C00D456A7 /* Sources */,
+				82CC43D52523882C00D456A7 /* Frameworks */,
+				82CC43D62523882C00D456A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPlayer;
+			productName = CPlayer;
+			productReference = 82CC43D82523882C00D456A7 /* CPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82CC43D02523882C00D456A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Cedric Bahirwe";
+				TargetAttributes = {
+					82CC43D72523882C00D456A7 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 82CC43D32523882C00D456A7 /* Build configuration list for PBXProject "CPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82CC43CF2523882C00D456A7;
+			productRefGroup = 82CC43D92523882C00D456A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82CC43D72523882C00D456A7 /* CPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82CC43D62523882C00D456A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8207D3B7252473F4005C660E /* 11-Combien-de-fois.mp3 in Resources */,
+				826B759C252632C400FF7D89 /* listen.svg in Resources */,
+				826B759D252632C400FF7D89 /* musci.svg in Resources */,
+				8207D3C225248366005C660E /* songs.json in Resources */,
+				8207D3BF252473F4005C660E /* 09-Reste-avec-moi.mp3 in Resources */,
+				8207D3C0252473F4005C660E /* 01-Anonymat.mp3 in Resources */,
+				8207D3BD252473F4005C660E /* 10-Hola.mp3 in Resources */,
+				8207D3B8252473F4005C660E /* 06-230-feat.-PLK.mp3 in Resources */,
+				826B759B252632C400FF7D89 /* mello.svg in Resources */,
+				826B7598252632C400FF7D89 /* video.svg in Resources */,
+				8207D3BA252473F4005C660E /* 07-Interlude.mp3 in Resources */,
+				82CC43E82523882D00D456A7 /* LaunchScreen.storyboard in Resources */,
+				82CC43E52523882D00D456A7 /* Assets.xcassets in Resources */,
+				8207D3BE252473F4005C660E /* 13-Fortune.mp3 in Resources */,
+				82CC43E32523882C00D456A7 /* Main.storyboard in Resources */,
+				826B759A252632C400FF7D89 /* playlist.svg in Resources */,
+				8207D3B4252473F4005C660E /* 08-Elle-aime-feat.-Laylow.mp3 in Resources */,
+				8207D3BB252473F4005C660E /* 12-New-Level-feat.-Josman.mp3 in Resources */,
+				826B7595252632C400FF7D89 /* piano.svg in Resources */,
+				826B759E252632C400FF7D89 /* table.svg in Resources */,
+				826B7599252632C400FF7D89 /* media.svg in Resources */,
+				8207D3BC252473F4005C660E /* 03-Smile-feat.-SCH.mp3 in Resources */,
+				8207D3B5252473F4005C660E /* 05-Top-Boy-feat.-Bosh.mp3 in Resources */,
+				826B7597252632C400FF7D89 /* player.svg in Resources */,
+				8207D3B9252473F4005C660E /* 04-Incassable-feat.-Leto.mp3 in Resources */,
+				826B7596252632C400FF7D89 /* happy.svg in Resources */,
+				826B758725262F9300FF7D89 /* walking.svg in Resources */,
+				8207D3B6252473F4005C660E /* 02-Solitude.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82CC43D42523882C00D456A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82CC43E02523882C00D456A7 /* ViewController.swift in Sources */,
+				82CC43DC2523882C00D456A7 /* AppDelegate.swift in Sources */,
+				826B75A02527003600FF7D89 /* ListView.swift in Sources */,
+				82CC43DE2523882C00D456A7 /* SceneDelegate.swift in Sources */,
+				826B758525262ED900FF7D89 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		82CC43E12523882C00D456A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82CC43E22523882C00D456A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82CC43E62523882D00D456A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82CC43E72523882D00D456A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82CC43EA2523882D00D456A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		82CC43EB2523882D00D456A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82CC43ED2523882D00D456A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				INFOPLIST_FILE = CPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cedo.CPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		82CC43EE2523882D00D456A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				INFOPLIST_FILE = CPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cedo.CPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82CC43D32523882C00D456A7 /* Build configuration list for PBXProject "CPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82CC43EA2523882D00D456A7 /* Debug */,
+				82CC43EB2523882D00D456A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82CC43EC2523882D00D456A7 /* Build configuration list for PBXNativeTarget "CPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82CC43ED2523882D00D456A7 /* Debug */,
+				82CC43EE2523882D00D456A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82CC43D02523882C00D456A7 /* Project object */;
+}
