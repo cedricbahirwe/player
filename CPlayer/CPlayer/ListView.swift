@@ -10,10 +10,19 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 struct ListView: View {
+    var dismiss: (() -> Void)?
+    var present: (() -> Void)?
+    @State var showSong = false
     @State private var songs = Bundle.main.decode(Album.self, from: "songs.json")
     var body: some View {
         List(self.songs.tracks, id: \.index) { track in
             ProfileAvatar(track: track, author: self.songs.author)
+                .onTapGesture {
+                    self.present?()
+            }
+            .sheet(isPresented: self.$showSong) {
+                MainVC()
+            }
         }
     }
 }
@@ -52,5 +61,15 @@ struct ProfileAvatar: View {
             }
             Spacer()
         }
+    }
+}
+
+struct MainVC: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        return ViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
     }
 }

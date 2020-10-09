@@ -11,21 +11,40 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var songTitleLabel: UILabel!
-    
     @IBOutlet weak var songAuthor: UILabel!
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var genreStack: UIStackView!
-    
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    
+    
+    var mainController: MainViewController?
+    var didPlayFirstSong = false
+    
+    var isPlaying = false {
+        didSet {
+            let image = self.isPlaying ? #imageLiteral(resourceName: "pause.button") : #imageLiteral(resourceName: "play.button")
+            UIView.animate(withDuration: 0.16, animations: {
+                self.playButton.setImage(image, for: .normal)
+            })
+        }
+    }
+    var isLiked = false {
+        didSet {
+            let image = self.isLiked ? #imageLiteral(resourceName: "liked") : #imageLiteral(resourceName: "like")
+            UIView.animate(withDuration: 0.16, animations: {
+                self.favoriteButton.setImage(image, for: .normal)
+            })
+        }
+    }
     let songs = Bundle.main.decode(Album.self, from: "songs.json")
     var currentSongIndex: Int = 0 {
         didSet {
             self.songTitle = self.songs.tracks[currentSongIndex].title
+             self.tabBarItem.badgeValue = self.songs.tracks[currentSongIndex].index.description
         }
     }
     var songTitle: String = "" {
@@ -33,43 +52,51 @@ class ViewController: UIViewController {
             self.songTitleLabel.text = songTitle
         }
     }
-//    var filePaths = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil).sorted()
     var player: AVAudioPlayer?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateTheme(userInterfaceStyle: self.traitCollection.userInterfaceStyle)
         self.currentSongIndex = 0
         self.customization()
-        self.updateTheme(userInterfaceStyle: self.traitCollection.userInterfaceStyle)
         self.songAuthor.text = self.songs.author
-        print(songs.tracks.count)
-
+        
+        let navController =  self.tabBarController?.viewControllers?.first as! UINavigationController
+        let musicController = navController.viewControllers.first as! MainViewController
+        musicController.songDelegate = self
+        
     }
     
     @IBAction func didPressPlay(_ sender: UIButton) {
+        
         if self.player?.isPlaying ?? false {
             self.pause()
+            self.isPlaying = false
         } else {
-            self.playSound(index: self.currentSongIndex)
+            if self.didPlayFirstSong {
+                self.player?.play()
+            } else {
+                self.playSound(index: self.currentSongIndex)
+                self.didPlayFirstSong = true
+                
+            }
         }
     }
     
     @IBAction func didPressNext(_ sender: UIButton) {
         if player?.isPlaying ?? false {
-             self.currentSongIndex += 1
+            self.currentSongIndex += 1
             self.stopAndPlay(index: self.currentSongIndex)
         }
     }
     
     @IBAction func didPressPrevious(_ sender: UIButton) {
-       
+        
         if self.player?.isPlaying ?? false {
-             self.currentSongIndex -= 1
+            self.currentSongIndex -= 1
             self.stopAndPlay(index: self.currentSongIndex)
         }
     }
-    
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -94,31 +121,38 @@ class ViewController: UIViewController {
     }
     
     func playSound(index: Int) {
-//        let prefix  = index <= 9 ? "0\(index)" : String(index)
-        let trackSource = self.songs.tracks[self.currentSongIndex].title
+        let trackSource = self.songs.tracks[index].title
         print(trackSource)
         let path = Bundle.main.path(forResource: "\(trackSource).mp3", ofType:nil)!
         let url = URL(fileURLWithPath: path)
-
+        
         do {
+            
+            try AVAudioSession.sharedInstance().setMode(.default)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
+            
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
             player = try AVAudioPlayer(contentsOf: url)
             player?.prepareToPlay()
             player?.play()
+            self.isPlaying = true
         } catch {
             let alert = UIAlertController(title: "Sorry!!!", message: "We Couldn't play '\(self.songs.tracks[self.currentSongIndex])' track" , preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Dismiss", style: .cancel)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
+        if !didPlayFirstSong { self.player!.delegate = self }
     }
     func pause() {
         player?.pause()
+        self.isPlaying = false
     }
     
     func replay() {
         player?.prepareToPlay()
         player?.play()
-       
+        self.isPlaying = true
     }
     
     func stopAndPlay(index: Int?) {
@@ -144,7 +178,7 @@ class ViewController: UIViewController {
         if #available(iOS 13.0, *) {
             favoriteButton.layer.borderColor = UIColor.label.cgColor
         } else {
-           favoriteButton.layer.borderColor = UIColor.black.cgColor
+            favoriteButton.layer.borderColor = UIColor.black.cgColor
         }
         
         
@@ -155,38 +189,23 @@ class ViewController: UIViewController {
         }
         
     }
-    
-    
-}
-
-struct Album: Codable {
-    var author: String
-    var tracks: [Track]
-}
-
-struct Track: Codable {
-    var index: Int
-    var title: String
-}
-
-
-
-extension Bundle {
-    func decode<T: Decodable>(_ type: T.Type, from file: String) -> T {
-        guard let url = self.url(forResource: file, withExtension: nil) else {
-            fatalError("Failed to locate \(file) in bundle.")
-        }
-
-        guard let data = try? Data(contentsOf: url) else {
-            fatalError("Failed to load \(file) from bundle.")
-        }
-
-        let decoder = JSONDecoder()
-
-        guard let loaded = try? decoder.decode(T.self, from: data) else {
-            fatalError("Failed to decode \(file) from bundle.")
-        }
-
-        return loaded
+    @IBAction func likePressFavorite(_ sender: UIButton) {
+        self.isLiked.toggle()
     }
 }
+
+extension ViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("finished playing song")
+    }
+}
+
+extension ViewController: SelectionOnTableDelegate {
+    func didSelectSong(at Index: Int, with Author: String) {
+        print("Merde")
+        self.playSound(index: Index)
+        self.currentSongIndex = Index
+    }
+
+}
+

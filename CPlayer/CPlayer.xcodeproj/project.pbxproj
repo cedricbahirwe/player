@@ -21,6 +21,10 @@
 		8207D3BF252473F4005C660E /* 09-Reste-avec-moi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B2252473F4005C660E /* 09-Reste-avec-moi.mp3 */; };
 		8207D3C0252473F4005C660E /* 01-Anonymat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3B3252473F4005C660E /* 01-Anonymat.mp3 */; };
 		8207D3C225248366005C660E /* songs.json in Resources */ = {isa = PBXBuildFile; fileRef = 8207D3C125248366005C660E /* songs.json */; };
+		824C8D9225307931000043E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824C8D9125307931000043E7 /* AVFoundation.framework */; };
+		824C8D9525307D15000043E7 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C8D9425307D15000043E7 /* SongModel.swift */; };
+		824C8D9725309186000043E7 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C8D9625309186000043E7 /* SongTableViewCell.swift */; };
+		824C8D992530B8D8000043E7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C8D982530B8D7000043E7 /* Helpers.swift */; };
 		826B758525262ED900FF7D89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B758425262ED900FF7D89 /* MainViewController.swift */; };
 		826B758725262F9300FF7D89 /* walking.svg in Resources */ = {isa = PBXBuildFile; fileRef = 826B758625262F9300FF7D89 /* walking.svg */; };
 		826B758A2526303B00FF7D89 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826B75892526303B00FF7D89 /* WebKit.framework */; };
@@ -58,6 +62,10 @@
 		8207D3B2252473F4005C660E /* 09-Reste-avec-moi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "09-Reste-avec-moi.mp3"; sourceTree = "<group>"; };
 		8207D3B3252473F4005C660E /* 01-Anonymat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01-Anonymat.mp3"; sourceTree = "<group>"; };
 		8207D3C125248366005C660E /* songs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = songs.json; sourceTree = "<group>"; };
+		824C8D9125307931000043E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		824C8D9425307D15000043E7 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		824C8D9625309186000043E7 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		824C8D982530B8D7000043E7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		826B758425262ED900FF7D89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		826B758625262F9300FF7D89 /* walking.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walking.svg; sourceTree = "<group>"; };
 		826B75892526303B00FF7D89 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824C8D9225307931000043E7 /* AVFoundation.framework in Frameworks */,
 				826B758A2526303B00FF7D89 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,9 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824C8D9325307D05000043E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				824C8D9425307D15000043E7 /* SongModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		826B75882526303B00FF7D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				824C8D9125307931000043E7 /* AVFoundation.framework */,
 				826B75892526303B00FF7D89 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -164,8 +182,11 @@
 				82CC43DD2523882C00D456A7 /* SceneDelegate.swift */,
 				826B758425262ED900FF7D89 /* MainViewController.swift */,
 				826B759F2527003600FF7D89 /* ListView.swift */,
+				824C8D9625309186000043E7 /* SongTableViewCell.swift */,
+				824C8D9325307D05000043E7 /* Models */,
 				82CC43DF2523882C00D456A7 /* ViewController.swift */,
 				82CC43E12523882C00D456A7 /* Main.storyboard */,
+				824C8D982530B8D7000043E7 /* Helpers.swift */,
 				826B75A22527022800FF7D89 /* Songs */,
 				826B75A12527021300FF7D89 /* SVGs */,
 				8207D3C125248366005C660E /* songs.json */,
@@ -275,8 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824C8D9525307D15000043E7 /* SongModel.swift in Sources */,
 				82CC43E02523882C00D456A7 /* ViewController.swift in Sources */,
 				82CC43DC2523882C00D456A7 /* AppDelegate.swift in Sources */,
+				824C8D992530B8D8000043E7 /* Helpers.swift in Sources */,
+				824C8D9725309186000043E7 /* SongTableViewCell.swift in Sources */,
 				826B75A02527003600FF7D89 /* ListView.swift in Sources */,
 				82CC43DE2523882C00D456A7 /* SceneDelegate.swift in Sources */,
 				826B758525262ED900FF7D89 /* MainViewController.swift in Sources */,
@@ -359,6 +383,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-weak_framework",
+					SwiftUI,
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -412,6 +440,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-weak_framework",
+					SwiftUI,
+				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -424,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				INFOPLIST_FILE = CPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				INFOPLIST_FILE = CPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
