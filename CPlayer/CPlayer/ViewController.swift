@@ -135,6 +135,7 @@ class ViewController: UIViewController {
             player = try AVAudioPlayer(contentsOf: url)
             player?.prepareToPlay()
             player?.play()
+            
             self.isPlaying = true
         } catch {
             let alert = UIAlertController(title: "Sorry!!!", message: "We Couldn't play '\(self.songs.tracks[self.currentSongIndex])' track" , preferredStyle: .alert)
