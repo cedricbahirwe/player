@@ -29,7 +29,7 @@ struct SongsList: View {
                             Group {
                             if track.title == manager.selectedTrack?.title {
                                 GIFView(gifName: "equal")
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 60, height: 50)
                                 }
                             }
                             , alignment: .bottomTrailing

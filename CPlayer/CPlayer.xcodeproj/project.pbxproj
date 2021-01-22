@@ -25,6 +25,7 @@
 		8251723825BB5B57006E120C /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251723725BB5B57006E120C /* GifView.swift */; };
 		8251723E25BB5BEA006E120C /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251723D25BB5BEA006E120C /* TestingView.swift */; };
 		8251724225BB5C53006E120C /* equal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8251724125BB5C53006E120C /* equal.gif */; };
+		8251724A25BB5FDD006E120C /* equalizer.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8251724925BB5FDC006E120C /* equalizer.gif */; };
 		82740B9125BB2D320005095F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9025BB2D320005095F /* AppDelegate.swift */; };
 		82740B9325BB2D320005095F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9225BB2D320005095F /* SceneDelegate.swift */; };
 		82740B9525BB2D320005095F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9425BB2D320005095F /* ContentView.swift */; };
@@ -68,6 +69,7 @@
 		8251723725BB5B57006E120C /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		8251723D25BB5BEA006E120C /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 		8251724125BB5C53006E120C /* equal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = equal.gif; sourceTree = "<group>"; };
+		8251724925BB5FDC006E120C /* equalizer.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = equalizer.gif; sourceTree = "<group>"; };
 		82740B8D25BB2D320005095F /* CPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82740B9025BB2D320005095F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82740B9225BB2D320005095F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				8251723D25BB5BEA006E120C /* TestingView.swift */,
 				82740BCC25BB34FC0005095F /* SongRow.swift */,
 				82740BD425BB37470005095F /* SongView.swift */,
+				8251724925BB5FDC006E120C /* equalizer.gif */,
 				8251721025BB539B006E120C /* Manager.swift */,
 				8251723425BB5B28006E120C /* GifHelper.swift */,
 				8251724125BB5C53006E120C /* equal.gif */,
@@ -281,6 +284,7 @@
 				8251722D25BB579C006E120C /* 07-Interlude.mp3 in Resources */,
 				82740B9725BB2D340005095F /* Assets.xcassets in Resources */,
 				82740BBE25BB2D950005095F /* video.svg in Resources */,
+				8251724A25BB5FDD006E120C /* equalizer.gif in Resources */,
 				82740BBA25BB2D950005095F /* table.svg in Resources */,
 				8251724225BB5C53006E120C /* equal.gif in Resources */,
 				82740BBB25BB2D950005095F /* media.svg in Resources */,
