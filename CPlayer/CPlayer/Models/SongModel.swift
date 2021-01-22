@@ -16,9 +16,9 @@ struct Album: Codable {
 struct Track: Codable {
     var index: Int
     var title: String
+    
+    static let track = Track(index: 0, title: "")
 }
-
-
 
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String) -> T {
