@@ -25,6 +25,15 @@ struct SongsList: View {
                 .padding(.top, 8)
                 List(manager.songs.tracks, id: \.index) { track in
                     SongRow(track: track, author: manager.songs.author)
+                        .overlay(
+                            Group {
+                            if track.title == manager.selectedTrack?.title {
+                                GIFView(gifName: "equal")
+                                    .frame(width: 50, height: 50)
+                                }
+                            }
+                            , alignment: .bottomTrailing
+                        )
                         .onTapGesture {
                             print("Selected Track")
                             manager.selectedTrack = track

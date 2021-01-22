@@ -32,7 +32,10 @@ struct SongRow: View {
                     .font(.system(size: 18))
                 Text(self.author).foregroundColor(.gray)
             }
-            Spacer()
+            Spacer5
         }
+        .contentShape(Rectangle())
     }
 }
+
+

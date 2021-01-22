@@ -21,6 +21,10 @@
 		8251722E25BB579C006E120C /* 10-Hola.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8251722125BB579C006E120C /* 10-Hola.mp3 */; };
 		8251722F25BB579C006E120C /* 04-Incassable-feat.-Leto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8251722225BB579C006E120C /* 04-Incassable-feat.-Leto.mp3 */; };
 		8251723025BB579C006E120C /* 11-Combien-de-fois.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8251722325BB579C006E120C /* 11-Combien-de-fois.mp3 */; };
+		8251723525BB5B28006E120C /* GifHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251723425BB5B28006E120C /* GifHelper.swift */; };
+		8251723825BB5B57006E120C /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251723725BB5B57006E120C /* GifView.swift */; };
+		8251723E25BB5BEA006E120C /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251723D25BB5BEA006E120C /* TestingView.swift */; };
+		8251724225BB5C53006E120C /* equal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8251724125BB5C53006E120C /* equal.gif */; };
 		82740B9125BB2D320005095F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9025BB2D320005095F /* AppDelegate.swift */; };
 		82740B9325BB2D320005095F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9225BB2D320005095F /* SceneDelegate.swift */; };
 		82740B9525BB2D320005095F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740B9425BB2D320005095F /* ContentView.swift */; };
@@ -60,6 +64,10 @@
 		8251722125BB579C006E120C /* 10-Hola.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10-Hola.mp3"; sourceTree = "<group>"; };
 		8251722225BB579C006E120C /* 04-Incassable-feat.-Leto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "04-Incassable-feat.-Leto.mp3"; sourceTree = "<group>"; };
 		8251722325BB579C006E120C /* 11-Combien-de-fois.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "11-Combien-de-fois.mp3"; sourceTree = "<group>"; };
+		8251723425BB5B28006E120C /* GifHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifHelper.swift; sourceTree = "<group>"; };
+		8251723725BB5B57006E120C /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		8251723D25BB5BEA006E120C /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
+		8251724125BB5C53006E120C /* equal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = equal.gif; sourceTree = "<group>"; };
 		82740B8D25BB2D320005095F /* CPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82740B9025BB2D320005095F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82740B9225BB2D320005095F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,9 +148,13 @@
 				82740B9225BB2D320005095F /* SceneDelegate.swift */,
 				82740B9425BB2D320005095F /* ContentView.swift */,
 				82740BD125BB35FB0005095F /* SongsList.swift */,
+				8251723D25BB5BEA006E120C /* TestingView.swift */,
 				82740BCC25BB34FC0005095F /* SongRow.swift */,
 				82740BD425BB37470005095F /* SongView.swift */,
 				8251721025BB539B006E120C /* Manager.swift */,
+				8251723425BB5B28006E120C /* GifHelper.swift */,
+				8251724125BB5C53006E120C /* equal.gif */,
+				8251723725BB5B57006E120C /* GifView.swift */,
 				82740BA525BB2D6C0005095F /* Models */,
 				82740BA925BB2D950005095F /* SVGs */,
 				8251721625BB579C006E120C /* Songs */,
@@ -270,6 +282,7 @@
 				82740B9725BB2D340005095F /* Assets.xcassets in Resources */,
 				82740BBE25BB2D950005095F /* video.svg in Resources */,
 				82740BBA25BB2D950005095F /* table.svg in Resources */,
+				8251724225BB5C53006E120C /* equal.gif in Resources */,
 				82740BBB25BB2D950005095F /* media.svg in Resources */,
 				8251722B25BB579C006E120C /* 13-Fortune.mp3 in Resources */,
 				82740BBF25BB2D950005095F /* walking.svg in Resources */,
@@ -286,8 +299,11 @@
 			files = (
 				82740B9125BB2D320005095F /* AppDelegate.swift in Sources */,
 				82740BCD25BB34FC0005095F /* SongRow.swift in Sources */,
+				8251723525BB5B28006E120C /* GifHelper.swift in Sources */,
+				8251723E25BB5BEA006E120C /* TestingView.swift in Sources */,
 				82740B9325BB2D320005095F /* SceneDelegate.swift in Sources */,
 				8251721125BB539B006E120C /* Manager.swift in Sources */,
+				8251723825BB5B57006E120C /* GifView.swift in Sources */,
 				82740BD525BB37470005095F /* SongView.swift in Sources */,
 				82740BD225BB35FB0005095F /* SongsList.swift in Sources */,
 				82740BA725BB2D6C0005095F /* SongModel.swift in Sources */,

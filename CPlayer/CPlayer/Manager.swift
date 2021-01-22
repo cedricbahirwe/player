@@ -14,6 +14,7 @@ class ViewState: NSObject, ObservableObject {
     @Published var selectedTrack: Track? = nil {
         didSet {
             if let index = songs.tracks.firstIndex(where: { $0.title == selectedTrack?.title}) {
+                currentSongIndex = index
                 playSound(index: index)
             }
         }

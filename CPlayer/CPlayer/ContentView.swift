@@ -51,7 +51,9 @@ struct ContentView: View {
                 .opacity(self.badgeNumber == 0 ? 0 : 1)
             }
         }
-        
+        .onAppear {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
         
     }
 }
