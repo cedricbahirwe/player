@@ -91,10 +91,10 @@ class ViewState: NSObject, ObservableObject {
         
         do {
             
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
             
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+//            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
             player = try AVAudioPlayer(contentsOf: url)
             player?.prepareToPlay()
             player?.play()
