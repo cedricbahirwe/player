@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+}
+
 struct SongsList: View {
     @ObservedObject var manager: ViewState
     var body: some View {
@@ -20,6 +24,7 @@ struct SongsList: View {
                         .resizable()
                         .frame(width: 45, height: 45)
                         .clipShape(Circle())
+                        .shadow(color: .offWhite, radius: 0.5)
                 }
                 .padding(.horizontal)
                 .padding(.top, 8)

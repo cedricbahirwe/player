@@ -20,6 +20,12 @@ class ViewState: NSObject, ObservableObject {
         }
     }
     
+    var time: TimeInterval {
+        print("imerw")
+        return player?.currentTime ?? 0
+        
+    }
+    
     @Published var error: (Bool, String) = (false, "")
     
     @Published var didPlayFirstSong = false
@@ -31,18 +37,20 @@ class ViewState: NSObject, ObservableObject {
     @Published var currentSongIndex: Int = 0
     
     @Published var player: AVAudioPlayer?
+    @Published var songLength: String = "0.0"
+    @Published var length: Double = 0.0
 
     func didPressPlay() {
         
-        if self.player?.isPlaying ?? false {
-            self.pause()
-            self.isPlaying = false
+        if player?.isPlaying ?? false {
+            pause()
         } else {
-            if self.didPlayFirstSong {
-                self.player?.play()
+            if didPlayFirstSong {
+                player?.play()
+                isPlaying = true
             } else {
-                self.playSound(index: self.currentSongIndex)
-                self.didPlayFirstSong = true
+                playSound(index: currentSongIndex)
+                didPlayFirstSong = true
                 
             }
         }
@@ -50,45 +58,55 @@ class ViewState: NSObject, ObservableObject {
     
     func didPressNext() {
         if player?.isPlaying ?? false {
-            self.currentSongIndex += 1
-            self.stopAndPlay(index: self.currentSongIndex)
+            currentSongIndex += 1
+            stopAndPlay(index: currentSongIndex)
         }
     }
     
     func didPressPrevious() {
         
-        if self.player?.isPlaying ?? false {
-            self.currentSongIndex -= 1
-            self.stopAndPlay(index: self.currentSongIndex)
+        if player?.isPlaying ?? false {
+            currentSongIndex -= 1
+            stopAndPlay(index: currentSongIndex)
         }
     }
     
     
     func pause() {
         player?.pause()
-        self.isPlaying = false
+        isPlaying = false
     }
     
     func replay() {
         player?.prepareToPlay()
         player?.play()
-        self.isPlaying = true
+        isPlaying = true
     }
     
     func stopAndPlay(index: Int?) {
         player?.stop()
         if let playedIndex = index {
-            self.playSound(index: playedIndex)
+            playSound(index: playedIndex)
         }
     }
     
     
     func playSound(index: Int) {
+        
+        
         let trackSource = songs.tracks[index].title
         print(trackSource)
         let path = Bundle.main.path(forResource: "\(trackSource).mp3", ofType:nil)!
         let url = URL(fileURLWithPath: path)
         
+        
+        let  audioAsset: AVURLAsset = AVURLAsset(url: url, options: nil)
+        let  audioDuration: CMTime = audioAsset.duration
+        let  audioDurationSeconds: Double = CMTimeGetSeconds(audioDuration)
+        length = audioDurationSeconds
+        let minSecs = secondsToHoursMinutesSeconds(seconds: audioDurationSeconds)
+
+        songLength = String(Int(minSecs.0)) + ":" + String(format: "%02d", Int(minSecs.1))
         do {
             
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
@@ -99,11 +117,18 @@ class ViewState: NSObject, ObservableObject {
             player?.prepareToPlay()
             player?.play()
             
-            self.isPlaying = true
+            isPlaying = true
         } catch {
-            self.error = (true , "We Couldn't play '\(songs.tracks[self.currentSongIndex])' track")
+            self.error = (true , "We Couldn't play '\(songs.tracks[currentSongIndex])' track")
         }
-        if !didPlayFirstSong { self.player!.delegate = self }
+        if !didPlayFirstSong { player!.delegate = self }
+    }
+    
+    
+    func secondsToHoursMinutesSeconds (seconds : Double) -> (Double, Double) {
+        let (_,  minf) = modf (seconds / 3600)
+      let (min, secf) = modf (60 * minf)
+        return (min, round((60 * secf)))
     }
 }
 

@@ -14,7 +14,7 @@ struct SongRow: View {
     
     var body: some View {
         HStack {
-            Image("vinyl")
+            Image("lefa")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 56, height: 56)
@@ -30,7 +30,7 @@ struct SongRow: View {
                 Text(track.title)
                     .bold()
                     .font(.system(size: 18))
-                Text(self.author).foregroundColor(.gray)
+                Text(author).foregroundColor(.gray)
             }
             Spacer()
         }

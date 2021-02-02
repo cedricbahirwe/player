@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
-
+import Combine
 
 let size = UIScreen.main.bounds.size
 struct SongView: View {
     @ObservedObject var manager: ViewState
+    
+    @State private var value: Double = 0.0
+    
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack(alignment: .top)  {
@@ -21,6 +25,7 @@ struct SongView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
+                        .clipShape(Circle())
                         .offset(y: -25)
                         .rotationEffect(.degrees(-45))
                     Spacer()
@@ -28,6 +33,8 @@ struct SongView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
+                        .clipShape(Circle())
+                    
                 }
             }
             .edgesIgnoringSafeArea(.top)
@@ -50,6 +57,7 @@ struct SongView: View {
                 HStack(spacing: 0) {
                     Rectangle()
                         .frame(width: size.width-100)
+                        .cornerRadius(30)
                         .overlay(
                             Image("famous")
                                 .resizable()
@@ -57,30 +65,31 @@ struct SongView: View {
                         )
                         .clipped()
                         .cornerRadius(20)
-
                     
-                    VStack(spacing: 50) {
+                    
+                    VStack(spacing: 40) {
                         Button(action: manager.didPressPrevious) {
                             Image("previousbutton")
-                                .renderingMode(.original)
+                                .renderingMode(.template)
                                 .resizable()
                                 .frame(width: 50, height: 50)
                         }
                         
                         Button(action: manager.didPressPlay) {
                             Image(manager.isPlaying ? "pause.button" : "play.button")
-                                .renderingMode(.original)
+                                .renderingMode(.template)
                                 .resizable()
                                 .frame(width: 60, height: 60)
                         }
                         
                         Button(action: manager.didPressNext) {
                             Image("nextbutton")
-                                .renderingMode(.original)
+                                .renderingMode(.template)
                                 .resizable()
                                 .frame(width: 50, height: 50)
                         }
                     }
+                    .foregroundColor(Color(.label))
                     .frame(width: 85)
                 }
                 .frame(maxWidth: size.width)
@@ -100,30 +109,28 @@ struct SongView: View {
                             .foregroundColor(.red)
                             .padding()
                             .overlay(
-                                Circle().strokeBorder(Color.black)
+                                Circle().strokeBorder(Color(.label))
                             )
                     })
+                    
                     .padding(.bottom, 10)
-                    Slider(value: .constant(2.0), in: 0.0...4.0, step: 0.1)
-                        .accentColor(.green)
+                    Slider(value: $value, in: 0...manager.length) { (changed) in
+                        if changed {
+                            print("Chaning")
+                        } else {
+                            print("Nope")
+                        }
+                    }
+                    .accentColor(.green)
                     
                     HStack {
-                        Text("2.37")
+                        Text(String(manager.player?.currentTime ?? 0.0))
                         Spacer()
-                        Text("3.40")
+                        Text(manager.songLength)
                     }
                 }
                 .padding(.bottom, 10)
                 .padding(.top, 20)
-                .background(
-                    Image("walk")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: size.width-100, height: size.height*0.25)
-                        .opacity(0.6)
-                        .clipped()
-                        .zIndex(-3)
-                )
                 
                 HStack(spacing: 10) {
                     Button(action: {}, label: {
@@ -131,7 +138,7 @@ struct SongView: View {
                             .shadow(color: Color(.darkGray), radius: 0, x: -1, y: -0.5)
                             .frame(height: 32)
                             .frame(maxWidth: .infinity)
-                            .background(Color.black)
+                            .background(Color(.label))
                             .clipShape(Capsule())
                     })
                     Button(action: {}, label: {
@@ -139,7 +146,7 @@ struct SongView: View {
                             .shadow(color: Color(.darkGray), radius: 0, x: -1, y: -0.5)
                             .frame(height: 32)
                             .frame(maxWidth: .infinity)
-                            .background(Color.black)
+                            .background(Color(.label))
                             .clipShape(Capsule())
                     })
                     Button(action: {}, label: {
@@ -147,7 +154,7 @@ struct SongView: View {
                             .shadow(color: Color(.darkGray), radius: 0, x: -1, y: -0.5)
                             .frame(height: 32)
                             .frame(maxWidth: .infinity)
-                            .background(Color.black)
+                            .background(Color(.label))
                             .clipShape(Capsule())
                     })
                     Button(action: {}, label: {
@@ -155,21 +162,25 @@ struct SongView: View {
                             .shadow(color: Color(.darkGray), radius: 0, x: -1, y: -0.5)
                             .frame(height: 32)
                             .frame(maxWidth: .infinity)
-                            .background(Color.black)
+                            .background(Color(.label))
                             .clipShape(Capsule())
                         
                     })
                     
                 }
                 .font(.callout)
-                .foregroundColor(.white)
+                .foregroundColor(Color(.systemBackground))
             }
             .padding()
             
             
             
         }
+//        .onReceive(, perform: { _ in
+//            value = manager.player?.currentTime ?? 0
+//        })
     }
+    
     
 }
 
@@ -178,6 +189,7 @@ struct SongView: View {
 struct SongView_Previews: PreviewProvider {
     static var previews: some View {
         SongView(manager: ViewState())
+        //            .environment(\.colorScheme, .dark)
     }
 }
 
@@ -195,3 +207,20 @@ extension String: Defaultable {
     
     
 }
+
+
+extension Binding {
+    
+    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue )
+            }
+        )
+    }
+    
+}
+
+

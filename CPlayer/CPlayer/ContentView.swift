@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewManager = ViewState()
-    @State private var selectedTab = 1
+    @State private var selectedTab = 2
     
     @State private var badgeNumber: Int = 3
     private var badgePosition: CGFloat = 2
@@ -42,13 +42,13 @@ struct ContentView: View {
                     Circle()
                         .foregroundColor(.red)
                     
-                    Text("\(self.badgeNumber)")
+                    Text("\(badgeNumber)")
                         .foregroundColor(.white)
                         .font(Font.system(size: 12))
                 }
                 .frame(width: 20, height: 20)
-                .offset(x: ( ( 2 * self.badgePosition) - 1 ) * ( geometry.size.width / ( 2 * self.tabsCount ) ), y: -30)
-                .opacity(self.badgeNumber == 0 ? 0 : 1)
+                .offset(x: ( ( 2 * badgePosition) - 1 ) * ( geometry.size.width / ( 2 * tabsCount ) ), y: -30)
+                .opacity(badgeNumber == 0 ? 0 : 1)
             }
         }
         .onAppear {

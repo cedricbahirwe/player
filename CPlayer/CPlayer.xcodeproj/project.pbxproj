@@ -48,6 +48,7 @@
 		82740BCD25BB34FC0005095F /* SongRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740BCC25BB34FC0005095F /* SongRow.swift */; };
 		82740BD225BB35FB0005095F /* SongsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740BD125BB35FB0005095F /* SongsList.swift */; };
 		82740BD525BB37470005095F /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82740BD425BB37470005095F /* SongView.swift */; };
+		82ACB0B125C99EE300992021 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACB0B025C99EE300992021 /* HelperViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		82740BCC25BB34FC0005095F /* SongRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRow.swift; sourceTree = "<group>"; };
 		82740BD125BB35FB0005095F /* SongsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsList.swift; sourceTree = "<group>"; };
 		82740BD425BB37470005095F /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
+		82ACB0B025C99EE300992021 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				82740BD425BB37470005095F /* SongView.swift */,
 				8251724925BB5FDC006E120C /* equalizer.gif */,
 				8251721025BB539B006E120C /* Manager.swift */,
+				82ACB0B025C99EE300992021 /* HelperViews.swift */,
 				8251723425BB5B28006E120C /* GifHelper.swift */,
 				8251724125BB5C53006E120C /* equal.gif */,
 				8251723725BB5B57006E120C /* GifView.swift */,
@@ -305,6 +308,7 @@
 				82740BCD25BB34FC0005095F /* SongRow.swift in Sources */,
 				8251723525BB5B28006E120C /* GifHelper.swift in Sources */,
 				8251723E25BB5BEA006E120C /* TestingView.swift in Sources */,
+				82ACB0B125C99EE300992021 /* HelperViews.swift in Sources */,
 				82740B9325BB2D320005095F /* SceneDelegate.swift in Sources */,
 				8251721125BB539B006E120C /* Manager.swift in Sources */,
 				8251723825BB5B57006E120C /* GifView.swift in Sources */,
