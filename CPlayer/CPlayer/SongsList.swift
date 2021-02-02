@@ -41,7 +41,7 @@ struct SongsList: View {
                         )
                         .onTapGesture {
                             print("Selected Track")
-                            manager.selectedTrack = track
+                            manager.setSongFor(track)
                             manager.selectedtab = 2
                         }
                 }

@@ -25,6 +25,7 @@ class ViewState: NSObject, ObservableObject {
     @Published var isPlaying = false
     
     @Published var isLiked = false
+    @Published var selectedTrack: Track?
     
     @Published var currentSongIndex: Int = 0 {
         didSet {
@@ -94,36 +95,37 @@ class ViewState: NSObject, ObservableObject {
     
     
     func playSound(index: Int) {
-        
-        
-        let trackSource = songs.tracks[index].title
-        print(trackSource)
-        let path = Bundle.main.path(forResource: "\(trackSource).mp3", ofType:nil)!
-        let url = URL(fileURLWithPath: path)
-        
-        
-        let  audioAsset: AVURLAsset = AVURLAsset(url: url, options: nil)
-        let  audioDuration: CMTime = audioAsset.duration
-        let  audioDurationSeconds: Double = CMTimeGetSeconds(audioDuration)
-        length = audioDurationSeconds
-        let minSecs = secondsToHoursMinutesSeconds(seconds: audioDurationSeconds)
-        
-        songLength = String(Int(minSecs.0)) + ":" + String(format: "%02d", Int(minSecs.1))
-        do {
+        if index < songs.tracks.count {
+            selectedTrack = songs.tracks[index]
             
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            //            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
+            let path = Bundle.main.path(forResource: "\(selectedTrack!.title).mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
             
-            //            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.prepareToPlay()
-            player?.play()
             
-            isPlaying = true
-        } catch {
-            self.error = (true , "We Couldn't play '\(songs.tracks[currentSongIndex])' track")
+            let  audioAsset: AVURLAsset = AVURLAsset(url: url, options: nil)
+            let  audioDuration: CMTime = audioAsset.duration
+            let  audioDurationSeconds: Double = CMTimeGetSeconds(audioDuration)
+            length = audioDurationSeconds
+            let minSecs = secondsToHoursMinutesSeconds(seconds: audioDurationSeconds)
+            
+            songLength = String(Int(minSecs.0)) + ":" + String(format: "%02d", Int(minSecs.1))
+            do {
+                
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                //            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
+                
+                //            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                player = try AVAudioPlayer(contentsOf: url)
+                player?.prepareToPlay()
+                player?.play()
+                
+                isPlaying = true
+            } catch {
+                self.error = (true , "We Couldn't play '\(songs.tracks[currentSongIndex])' track")
+            }
+            if !didPlayFirstSong { player!.delegate = self }
         }
-        if !didPlayFirstSong { player!.delegate = self }
+
     }
     
     
