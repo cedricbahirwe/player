@@ -122,9 +122,6 @@ struct SongView: View {
                             print("Chaning")
 //                            manager.pause()
                         } else {
-                            print("Nope") // 150 sec
-                            print("Current Time", currentTime)
-                            print("Plyaer Time",  manager.player?.currentTime)
                             manager.isPlaying = true
                             manager.player?.currentTime =  currentTime 
                         }

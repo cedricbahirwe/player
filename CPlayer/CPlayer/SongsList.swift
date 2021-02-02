@@ -40,9 +40,7 @@ struct SongsList: View {
                             , alignment: .bottomTrailing
                         )
                         .onTapGesture {
-                            print("Selected Track")
                             manager.setSongFor(track)
-                            manager.selectedtab = 2
                         }
                 }
                 .listStyle(PlainListStyle())

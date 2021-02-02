@@ -13,9 +13,9 @@ class ViewState: NSObject, ObservableObject {
     let timer = Timer.publish(every: 0.9, on: .main, in: .common).autoconnect()
     
     
-    @Published var selectedtab = 1
+    @Published var selectedTab = 1
     @Published var songs = Bundle.main.decode(Album.self, from: "songs.json")
-//
+    //
     @Published var currentTime: Double = 0.0
     
     @Published var error: (Bool, String) = (false, "")
@@ -29,7 +29,11 @@ class ViewState: NSObject, ObservableObject {
     
     @Published var currentSongIndex: Int = 0 {
         didSet {
-            playSound(index: currentSongIndex)
+            if  (0..<songs.tracks.count).contains(currentSongIndex) {
+                playSound(index: currentSongIndex)
+            } else {
+                currentSongIndex = 0
+            }
         }
     }
     
@@ -41,10 +45,12 @@ class ViewState: NSObject, ObservableObject {
         
         if player?.isPlaying ?? false {
             pause()
+            isPlaying = false
         } else {
             if didPlayFirstSong {
                 player?.play()
                 isPlaying = true
+                didPlayFirstSong = true
             } else {
                 currentSongIndex = 0
                 didPlayFirstSong = true
@@ -79,7 +85,7 @@ class ViewState: NSObject, ObservableObject {
         player?.play()
         isPlaying = true
     }
-
+    
     
     func setSongFor(_ track: Track) {
         if let index = songs.tracks.firstIndex(where: { $0.index == track.index }) {
@@ -95,37 +101,33 @@ class ViewState: NSObject, ObservableObject {
     
     
     func playSound(index: Int) {
-        if index < songs.tracks.count {
-            selectedTrack = songs.tracks[index]
+        selectedTrack = songs.tracks[index]
+        
+        let path = Bundle.main.path(forResource: "\(selectedTrack!.title).mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+        
+        
+        let  audioAsset: AVURLAsset = AVURLAsset(url: url, options: nil)
+        let  audioDuration: CMTime = audioAsset.duration
+        let  audioDurationSeconds: Double = CMTimeGetSeconds(audioDuration)
+        length = audioDurationSeconds
+        let minSecs = secondsToHoursMinutesSeconds(seconds: audioDurationSeconds)
+        
+        songLength = String(Int(minSecs.0)) + ":" + String(format: "%02d", Int(minSecs.1))
+        do {
             
-            let path = Bundle.main.path(forResource: "\(selectedTrack!.title).mp3", ofType:nil)!
-            let url = URL(fileURLWithPath: path)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            //            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
             
+            //            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+            player?.play()
             
-            let  audioAsset: AVURLAsset = AVURLAsset(url: url, options: nil)
-            let  audioDuration: CMTime = audioAsset.duration
-            let  audioDurationSeconds: Double = CMTimeGetSeconds(audioDuration)
-            length = audioDurationSeconds
-            let minSecs = secondsToHoursMinutesSeconds(seconds: audioDurationSeconds)
-            
-            songLength = String(Int(minSecs.0)) + ":" + String(format: "%02d", Int(minSecs.1))
-            do {
-                
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-                //            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: .defaultToSpeaker)
-                
-                //            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                player = try AVAudioPlayer(contentsOf: url)
-                player?.prepareToPlay()
-                player?.play()
-                
-                isPlaying = true
-            } catch {
-                self.error = (true , "We Couldn't play '\(songs.tracks[currentSongIndex])' track")
-            }
-            if !didPlayFirstSong { player!.delegate = self }
+            isPlaying = true
+        } catch {
+            self.error = (true , "We Couldn't play '\(songs.tracks[currentSongIndex])' track")
         }
-
     }
     
     

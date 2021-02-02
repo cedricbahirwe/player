@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewManager = ViewState()
-    @State private var selectedTab = 2
     
     @State private var badgeNumber: Int = 3
     private var badgePosition: CGFloat = 2
@@ -22,7 +21,7 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack(alignment: .bottomLeading) {
                 // TabView
-                TabView(selection: $selectedTab) {
+                TabView(selection: $viewManager.selectedTab) {
                     SongsList(manager: viewManager)
                         .tabItem {
                             Image(systemName: "music.note.list")
@@ -53,6 +52,7 @@ struct ContentView: View {
         }
         .onAppear {
             UIApplication.shared.isIdleTimerDisabled = true
+            viewManager.player?.delegate = viewManager
         }
         
     }
