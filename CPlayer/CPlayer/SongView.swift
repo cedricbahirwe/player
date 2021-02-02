@@ -12,7 +12,7 @@ let size = UIScreen.main.bounds.size
 struct SongView: View {
     @ObservedObject var manager: ViewState
     
-    @State private var value: Double = 0.0
+    @State private var currentTime: Double = 0.0
     
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -25,8 +25,10 @@ struct SongView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
+                        .padding()
+                        .background(Color.white)
                         .clipShape(Circle())
-                        .offset(y: -25)
+                        .offset(x: -20, y: -55)
                         .rotationEffect(.degrees(-45))
                     Spacer()
                     Image("happy")
@@ -98,33 +100,39 @@ struct SongView: View {
                 
                 VStack {
                     
-                    Button(action: {
-                        withAnimation {
-                            manager.isLiked.toggle()
-                        }
-                    }, label: {
-                        Image(manager.isLiked ? "liked" : "like")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.red)
-                            .padding()
-                            .overlay(
-                                Circle().strokeBorder(Color(.label))
-                            )
-                    })
+//                    Button(action: {
+//                        withAnimation {
+//                            manager.isLiked.toggle()
+//                        }
+//                    }, label: {
+//                        Image(manager.isLiked ? "liked" : "like")
+//                            .resizable()
+//                            .frame(width: 20, height: 20)
+//                            .foregroundColor(.red)
+//                            .padding()
+//                            .overlay(
+//                                Circle().strokeBorder(Color(.label))
+//                            )
+//                    })
+//                    .padding(.bottom, 10)
+//                    .hidden()
                     
-                    .padding(.bottom, 10)
-                    Slider(value: $value, in: 0...manager.length) { (changed) in
+                    Slider(value: $currentTime, in: 0...manager.length) { (changed) in
                         if changed {
                             print("Chaning")
+//                            manager.pause()
                         } else {
-                            print("Nope")
+                            print("Nope") // 150 sec
+                            print("Current Time", currentTime)
+                            print("Plyaer Time",  manager.player?.currentTime)
+                            manager.isPlaying = true
+                            manager.player?.currentTime =  currentTime 
                         }
                     }
                     .accentColor(.green)
                     
                     HStack {
-                        Text(String(manager.player?.currentTime ?? 0.0))
+                        Text(String(format: "%.2f", currentTime))
                         Spacer()
                         Text(manager.songLength)
                     }
@@ -176,6 +184,11 @@ struct SongView: View {
             
             
         }
+//        .onReceive(manager.timer, perform: { _ in
+//            if manager.isPlaying {
+//                currentTime = manager.player?.currentTime ?? 0.0
+//            }
+//        })
 //        .onReceive(, perform: { _ in
 //            value = manager.player?.currentTime ?? 0
 //        })
