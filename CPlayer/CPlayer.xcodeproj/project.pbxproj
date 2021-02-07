@@ -109,6 +109,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8209F2A125D046DD00AD6359 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8251724925BB5FDC006E120C /* equalizer.gif */,
+				82ACB0B025C99EE300992021 /* HelperViews.swift */,
+				8251723425BB5B28006E120C /* GifHelper.swift */,
+				8251724125BB5C53006E120C /* equal.gif */,
+				8251723725BB5B57006E120C /* GifView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8251721625BB579C006E120C /* Songs */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,12 +167,8 @@
 				8251723D25BB5BEA006E120C /* TestingView.swift */,
 				82740BCC25BB34FC0005095F /* SongRow.swift */,
 				82740BD425BB37470005095F /* SongView.swift */,
-				8251724925BB5FDC006E120C /* equalizer.gif */,
 				8251721025BB539B006E120C /* Manager.swift */,
-				82ACB0B025C99EE300992021 /* HelperViews.swift */,
-				8251723425BB5B28006E120C /* GifHelper.swift */,
-				8251724125BB5C53006E120C /* equal.gif */,
-				8251723725BB5B57006E120C /* GifView.swift */,
+				8209F2A125D046DD00AD6359 /* Helpers */,
 				82740BA525BB2D6C0005095F /* Models */,
 				82740BA925BB2D950005095F /* SVGs */,
 				8251721625BB579C006E120C /* Songs */,
